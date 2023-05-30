@@ -37,3 +37,4 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+Vue.component('chat-component', require('./components/ChatComponent.vue').default);
