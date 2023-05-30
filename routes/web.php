@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('send-message');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
