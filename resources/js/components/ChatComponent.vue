@@ -23,7 +23,14 @@ export default {
         return {
             messages: [],
             newMessage: "",
+            socket: null,
         };
+    },
+    created() {
+        this.socket = io("http://localhost:3000");
+        this.socket.on("new-message", (message) => {
+            this.messages.push(message);
+        });
     },
     methods: {
         async sendMessage() {
